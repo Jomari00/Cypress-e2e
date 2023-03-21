@@ -1,0 +1,50 @@
+describe('editProject spec', () => {
+    it('editProject-passes', () => {
+      cy.visit('https://live.quickreach.co')
+      cy.get('[data-cy="lg-email"]').type('testuser@yopmail.com')
+      cy.get('[data-cy="lg-password"]').type('Pass@word1')
+      cy.get('[data-cy="lg-submit-btn"]').click()
+      cy.wait(15000)
+      cy.get('[data-cy="pm-searchproject"]').type('02252023 TPJom Automate{enter}')
+      cy.wait(5000)
+      cy.get('[data-cy="pm-editproject"] > .mat-button-wrapper > .mat-icon').click()
+      cy.get('.fs14 > .mat-form-field-wrapper > .mat-form-field-flex').click()
+      //Project Details
+      cy.contains('Non-residential').click()
+      cy.get('#mat-input-3').clear()
+      cy.get('#mat-input-3').type('Edit Description')
+      cy.get(':nth-child(2) > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-suffix > .mat-datepicker-toggle > .mat-icon-button').click()
+      //cy.get('.mat-calendar-next-button').click()
+      cy.get('[aria-label="07-03-2023"] > .mat-calendar-body-cell-content').click()
+      //cy.get('.mat-overlay-transparent-backdrop').click()
+      cy.get('#mat-input-7').clear()
+      cy.get('#mat-input-7').type('3001')
+      cy.get('#mat-input-8').clear()
+      cy.get('#mat-input-8').type('2901')
+      cy.get('#mat-input-9').clear()
+      cy.get('#mat-input-9').type('WATCHER v2.1')
+      //cy.intercept({
+      //  url:"https://m.stripe.com/6",
+      //  method:"POST"
+     // }).as("saveDetails")
+      cy.get('.btn-rounded-cyan100').click()
+     // cy.wait('@saveDetails')
+      cy.wait(5000)
+      cy.get('#cdk-step-content-0-0 > .fx-layout-gap-10px > .fx-layout-gap-1vw > .btn-rounded-solid-cyan100').click()
+      cy.get('[fxlayout="column"] > .btn-rounded-solid-cyan100').click()
+      //Inclusions
+      cy.wait(5000)
+      cy.get('#mat-slide-toggle-1 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+      cy.get('#mat-checkbox-2 > .mat-checkbox-layout > .mat-checkbox-inner-container').click()
+      cy.get('.btn-rounded-cyan100').click()
+      cy.get('#cdk-step-content-0-1 > .fx-layout-gap-1vw > .btn-rounded-solid-cyan100').click({force:true})
+      cy.get('[fxlayout="column"] > .btn-rounded-solid-cyan100').click()
+      //Members
+      //cy.get(':nth-child(4) > :nth-child(5) > .text-gray100').click()
+      cy.get('.btn-rounded-cyan100').click()
+      cy.get('#cdk-step-content-0-2 > .fx-layout-column.fx-layout-gap-10px > .fx-layout-gap-1vw > .btn-rounded-solid-cyan100').click({force:true})
+      cy.get('[fxlayout="column"] > .btn-rounded-solid-cyan100').click()
+      cy.get('[style="width: 100%; margin-top: 16px;"] > .btn-rounded-solid-cyan100').click({force:true})
+
+    })
+  })  
