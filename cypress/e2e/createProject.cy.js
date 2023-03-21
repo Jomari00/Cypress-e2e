@@ -1,0 +1,57 @@
+describe('Project Admin', () => {
+    it('create project-passes', () => {
+        //LOGIN using live account
+      cy.visit('https://live.quickreach.co')
+      cy.get('[data-cy="lg-email"]').type('testuser@yopmail.com')
+      cy.get('[data-cy="lg-password"]').type('Pass@word1')
+      cy.get('[data-cy="lg-submit-btn"]').click()
+   
+        //Create Project
+      cy.wait(15000)
+      cy.get('[data-cy="pm-createproject"]').click()
+      //Project Details
+      cy.get('#mat-input-2').type('03142023 Automate')
+      cy.get('.mat-select-placeholder').click()
+      cy.get('#mat-option-458').click()
+      cy.get('#mat-input-3').type('test description')
+      cy.get('#mat-input-4').type('14.5764, 121.0851')
+      cy.get('#mat-input-7').clear()
+      cy.get('#mat-input-7').type('1000')
+      cy.get('#mat-input-8').clear()
+      cy.get('#mat-input-8').type('900')
+      cy.get('#mat-input-9').type('WATCHER')
+     // cy.get('.upload-image > div > .ng-star-inserted').click()
+     cy.wait(2000)
+     //Inclusions
+     cy.get('#cdk-step-content-0-0 > .fx-layout-gap-10px > .fx-layout-gap-1vw > .btn-rounded-solid-cyan100').click()
+     cy.get('#mat-slide-toggle-2 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+     cy.get('#mat-slide-toggle-3 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+     cy.get('#mat-slide-toggle-4 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+     cy.get('#mat-slide-toggle-5 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+     cy.get('#mat-slide-toggle-6 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+     cy.get('#mat-checkbox-2 > .mat-checkbox-layout > .mat-checkbox-inner-container').click()
+     cy.get('#mat-slide-toggle-1 > .mat-slide-toggle-label > .mat-slide-toggle-bar').click()
+     cy.wait(2000)
+     cy.get('#cdk-step-content-0-1 > .fx-layout-gap-1vw > .btn-rounded-solid-cyan100').click()
+     //Members
+     cy.get('.fsr-24').click()
+     cy.get('[fxflex="100"] > .mat-form-field > .mat-form-field-wrapper > .mat-form-field-flex').click()
+     cy.get('.searchbar > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('Berry Baltazar')
+     cy.get('#mat-option-481').click()
+     cy.get('.searchbar > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').clear()
+     cy.get('.searchbar > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('Allan Amazon')
+     cy.get('#mat-option-494').click()
+     cy.get('.searchbar > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').clear()
+     cy.get('.searchbar > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('Cara Clemente')
+     cy.get('#mat-option-507').click()
+     cy.get('.cdk-overlay-transparent-backdrop').click()
+     cy.get('.mat-dialog-actions > .fw-600').click()
+     cy.get('#cdk-step-content-0-2 > .fx-layout-column.fx-layout-gap-10px > .fx-layout-gap-1vw > .btn-rounded-solid-cyan100').click()
+     cy.get('.mat-dialog-actions > .text-white').click()
+     cy.wait(40000)
+    // cy.get('[style="margin-top: 16px; place-content: center; align-items: center; flex-direction: row; box-sizing: border-box; display: flex;"] > .btn-rounded-solid-cyan100').click()
+    cy.get('#cdk-step-content-0-3 > .fx-layout-align-center-center > .btn-rounded-solid-cyan100').click()
+    })
+    
+  })
+
